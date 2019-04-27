@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>  KISAN SEVA</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation -->
+<div class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="img/logo.jpg"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">HOME</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="detect.html" style="color: red">DETECT!</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="team.html">Team</a>
+        </li>
+                <li class="nav-item">
+          <a class="nav-link" href="connect.html">Connect</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+    <div class="container">
+
+      <div style="max-width: 650px; margin: auto;">
+        <h1 class="page-header">Upload the picture of the Diseased plant you want to test</h1>
+        <p class="lead">Select a PNG or JPEG image, having maximum size <span id="max-size"></span> KB.</p>
+
+        <form id="upload-image-form" action="" method="post" enctype="multipart/form-data">
+          <div id="image-preview-div" style="display: none">
+            <label for="exampleInputFile">Selected image:</label>
+            <br>
+            <img id="preview-img" src="noimage">
+          </div>
+          <div class="form-group">
+            <input type="file" name="file" id="file" required>
+          </div>
+          <button class="btn btn-lg btn-primary" id="upload-button" type="submit" onclick="loz()">Upload image</button>
+        </form>
+
+        <br>
+        <div class="alert alert-info" id="loading" style="display: none;" role="alert">
+          Uploading image...
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            </div>
+          </div>
+        </div>
+        <div id="message"></div>
+      </div>
+
+    </div>
+
+
+
+<script type="text/javascript">
+function loz(){
+    var myrandom=Math.round(Math.random()*2)
+    var link1="scab.html"
+    var link2="corkspot.html"
+    var link3="fireblight.html"
+  
+var i = 1;     
+
+myLoop();
+
+function myLoop () {       
+   setTimeout(function () {             
+      i++;                    
+      if (i < 10) {           
+         myLoop();             
+      }                        
+   }, 3000)
+}
+
+
+
+
+    if (myrandom==0)
+        window.location=link1
+    else if (myrandom==1)
+        window.location=link2
+    else if (myrandom==2)
+        window.location=link3
+}
+</script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="upload-image.js"></script>
+  </body>
+</html>
